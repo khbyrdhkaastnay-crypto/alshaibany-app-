@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+
+<html class="h-full" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>تتبع الطلب (تجريبي) | مطاعم الشيباني</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface": "#fcf9f4",
+            "on-secondary": "#ffffff",
+            "outline-variant": "#dcc1b9",
+            "secondary-fixed": "#ffdea5",
+            "on-primary-container": "#ffd8cc",
+            "surface-dim": "#dcdad5",
+            "on-error": "#ffffff",
+            "on-tertiary-fixed-variant": "#2d486d",
+            "on-secondary-fixed-variant": "#5d4201",
+            "on-secondary-container": "#785a1a",
+            "on-primary-fixed-variant": "#7d2d12",
+            "on-primary-fixed": "#3a0b00",
+            "inverse-primary": "#ffb59e",
+            "on-error-container": "#93000a",
+            "secondary-container": "#fed488",
+            "primary": "#833116",
+            "on-background": "#1c1c19",
+            "on-tertiary-container": "#d1e1ff",
+            "surface-container-highest": "#e5e2dd",
+            "inverse-on-surface": "#f3f0eb",
+            "primary-fixed-dim": "#ffb59e",
+            "tertiary-container": "#4a648c",
+            "on-surface-variant": "#56423d",
+            "on-tertiary-fixed": "#001c3b",
+            "surface-container-low": "#f6f3ee",
+            "background": "#fcf9f4",
+            "inverse-surface": "#31302d",
+            "on-secondary-fixed": "#261900",
+            "secondary": "#775a19",
+            "surface-container": "#f0ede9",
+            "primary-container": "#a2482b",
+            "on-surface": "#1c1c19",
+            "error": "#ba1a1a",
+            "surface-container-high": "#ebe8e3",
+            "outline": "#89726c",
+            "surface-bright": "#fcf9f4",
+            "error-container": "#ffdad6",
+            "tertiary": "#314c72",
+            "secondary-fixed-dim": "#e9c176",
+            "surface-variant": "#e5e2dd",
+            "surface-tint": "#9c4327",
+            "tertiary-fixed-dim": "#adc8f5",
+            "tertiary-fixed": "#d5e3ff",
+            "surface-container-lowest": "#ffffff",
+            "primary-fixed": "#ffdbd0",
+            "on-primary": "#ffffff",
+            "on-tertiary": "#ffffff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1.25rem",
+            "3xl": "1.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-lg": "1.5rem",
+            "margin-mobile": "1.25rem",
+            "space-md": "1rem",
+            "gutter": "1rem",
+            "space-xs": "0.25rem",
+            "space-xl": "2.25rem",
+            "margin": "1.5rem",
+            "gutter-mobile": "0.75rem",
+            "space-sm": "0.5rem"
+          },
+          "fontFamily": {
+            "body-md": ["Cairo", "Plus Jakarta Sans", "sans-serif"],
+            "label-caps": ["Cairo", "Plus Jakarta Sans", "sans-serif"],
+            "headline-md": ["Cairo", "Plus Jakarta Sans", "sans-serif"],
+            "headline-lg": ["Cairo", "Plus Jakarta Sans", "sans-serif"],
+            "body-lg": ["Cairo", "Plus Jakarta Sans", "sans-serif"],
+            "body-sm": ["Cairo", "Plus Jakarta Sans", "sans-serif"],
+            "headline-sm": ["Cairo", "Plus Jakarta Sans", "sans-serif"],
+            "label-md": ["Cairo", "Plus Jakarta Sans", "sans-serif"],
+            "display-hero-mobile": ["Cairo", "Plus Jakarta Sans", "sans-serif"],
+            "label-lg": ["Cairo", "Plus Jakarta Sans", "sans-serif"],
+            "display-hero": ["Cairo", "Plus Jakarta Sans", "sans-serif"]
+          },
+          "fontSize": {
+            "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "label-caps": ["11px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+            "headline-md": ["22px", { "lineHeight": "30px", "letterSpacing": "0em", "fontWeight": "700" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "400" }],
+            "headline-sm": ["18px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "700" }],
+            "label-md": ["12px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "display-hero-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "800" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "display-hero": ["38px", { "lineHeight": "46px", "letterSpacing": "-0.02em", "fontWeight": "800" }]
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 22px;
+      line-height: 1;
+      display: inline-block;
+      text-transform: none;
+      letter-spacing: normal;
+      word-wrap: normal;
+      white-space: nowrap;
+      direction: ltr;
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    /* Subtle pulse animation for delivery beacon */
+    @keyframes pulse-ring {
+      0% { transform: scale(0.9); opacity: 0.9; }
+      50% { transform: scale(1.35); opacity: 0.3; }
+      100% { transform: scale(0.9); opacity: 0.9; }
+    }
+    .animate-pulse-ring {
+      animation: pulse-ring 2.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+
+    /* Custom scrollbar hide for cleaner mobile presentation */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface antialiased min-h-full font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+
+<div id="prototype-note" role="note">نسخة معاينة فقط — الأسعار تجريبية وتحتاج إلى مراجعة الإدارة قبل النشر. لا يتم إرسال الطلبات فعليًا.</div>
+<section id="branch-panel" aria-label="اختيار الفرع">
+  <label for="branch-select">الفرع الذي تريد الطلب منه</label>
+  <select id="branch-select">
+    <option value="">اختر الفرع</option>
+    <option value="haddah">حدة — صنعاء (بيانات الفرع تحتاج إلى تأكيد)</option>
+    <option value="other">فرع آخر (تُضاف بياناته بعد تأكيد الإدارة)</option>
+  </select>
+  <p>سيُتاح اختيار جميع الفروع بعد إدخال قائمة الفروع وعناوينها المعتمدة.</p>
+</section>
+<nav id="prototype-nav" aria-label="التنقل بين الشاشات">
+  <a href="home.html">الرئيسية</a><a href="dish.html">الوجبات</a><a href="cart.html">السلة</a><a href="tracking.html">حالة الطلب</a>
+</nav>
+<style id="prototype-v2-style">
+#prototype-note{direction:rtl;background:#fff1cf;color:#654315;border-bottom:1px solid #e5c57c;padding:10px 14px;text-align:center;font:700 12px/1.7 system-ui,sans-serif;position:relative;z-index:10000}
+#branch-panel{direction:rtl;position:relative;z-index:9997;margin:0 auto;padding:10px 14px;background:#fffaf1;border-bottom:1px solid #eadcc9;font-family:system-ui,sans-serif;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+#branch-panel label{font-size:12px;font-weight:700;color:#5b2b17}
+#branch-panel select{flex:1;min-width:180px;padding:9px 10px;border:1px solid #d9c4b2;border-radius:10px;background:#fff;color:#38271d;font-size:13px}
+#branch-panel p{width:100%;margin:0;color:#795f4d;font-size:11px}
+#prototype-nav{position:fixed;z-index:10001;bottom:0;left:0;right:0;display:flex;justify-content:space-around;gap:5px;direction:rtl;background:rgba(255,255,255,.98);border-top:1px solid #e6d9ce;padding:10px 8px calc(10px + env(safe-area-inset-bottom));box-shadow:0 -4px 18px rgba(35,20,10,.08);font-family:system-ui,sans-serif}
+#prototype-nav a{flex:1;text-align:center;text-decoration:none;color:#743018;font-size:12px;font-weight:700;padding:8px 3px;border-radius:9px;background:#fff8ef}
+body{padding-bottom:80px!important}
+/* Hide legacy navigation that exposes unsupported booking/review features in this order-only prototype. */
+body > nav:not(#prototype-nav){display:none!important}
+</style>
+<script>
+(function(){
+  const key='alshaibany-selected-branch';
+  const select=document.getElementById('branch-select');
+  if(select){try{select.value=localStorage.getItem(key)||'';select.addEventListener('change',()=>{localStorage.setItem(key,select.value);if(select.value==='other')alert('هذه معاينة فقط. يلزم إدخال أسماء الفروع وعناوينها المعتمدة من إدارة المطاعم.');});}catch(e){}}
+  document.addEventListener('click',function(ev){
+    const el=ev.target.closest('button,a');if(!el)return;
+    const label=(el.innerText||el.getAttribute('aria-label')||'').replace(/\s+/g,' ').trim();
+    const page=location.pathname.split('/').pop();
+    if(page==='home.html' && (label.includes('اطلب الآن')||label.includes('استكشف القائمة'))){ev.preventDefault();location.href='dish.html';return;}
+    if(page==='cart.html' && (label.includes('تأكيد ودفع الطلب')||label.includes('تأكيد الطلب'))){ev.preventDefault();alert('هذه معاينة فقط: لم يُرسل الطلب ولم يتم الدفع.');location.href='tracking.html';return;}
+  });
+})();
+</script>
+
+<!-- Mobile Container Shell -->
+<div class="max-w-md mx-auto min-h-screen bg-surface-container-low shadow-2xl relative flex flex-col pb-36">
+<!-- Top App Bar (Header with Contextual Actions) -->
+<header class="sticky top-0 z-40 bg-surface/95 backdrop-blur-md px-margin-mobile py-3.5 flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-3">
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</a>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="inline-block w-2 h-2 rounded-full bg-primary animate-ping"></span>
+<span class="font-headline-sm text-headline-sm text-on-surface">تتبع الطلب (نموذج تجريبي)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span>رقم الطلب: #SH-84920</span>
+<span class="text-outline-variant">•</span>
+<span class="text-primary font-label-md">شارع حدة</span>
+</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<a aria-label="اتصال مباشر بالفرع" class="w-10 h-10 rounded-full bg-primary-fixed text-primary flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all active:scale-95 duration-150" href="tel:+9671444444">
+<span class="material-symbols-outlined text-[20px]" data-weight="fill" style="font-variation-settings: 'FILL' 1;">call</span>
+</a>
+</div>
+</header>
+<!-- ETA Banner Highlight -->
+<div class="px-margin-mobile pt-3 pb-1">
+<div class="bg-gradient-to-l from-primary-container to-primary rounded-2xl p-4 text-on-primary flex items-center justify-between shadow-md relative overflow-hidden">
+<div class="absolute -left-6 -bottom-6 w-24 h-24 rounded-full bg-surface-container-lowest/10 pointer-events-none"></div>
+<div class="relative z-10">
+<div class="flex items-center gap-1.5 text-on-primary-container font-label-caps text-label-caps">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span>الوصول المقدر إلى موقعك</span>
+</div>
+<div class="font-display-hero-mobile text-display-hero-mobile tracking-tight mt-0.5">
+            25 - 35 <span class="font-body-md text-body-md">دقيقة</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-primary-container/90 mt-0.5">
+            الموعد المتوقع: <span class="font-semibold text-white">08:45 مساءً</span>
+</p>
+</div>
+<div class="relative z-10 flex flex-col items-end text-left pl-1">
+<span class="inline-flex items-center gap-1 bg-surface-container-lowest/20 backdrop-blur-sm text-white px-2.5 py-1 rounded-full text-label-md font-label-md">
+<span class="material-symbols-outlined text-[14px]">local_shipping</span>
+<span>جاري التوصيل</span>
+</span>
+<span class="text-body-sm font-body-sm text-on-primary-container mt-1.5 dir-ltr">1.8 كم متبقي</span>
+</div>
+</div>
+</div>
+<!-- Interactive Live Map Section -->
+<div class="px-margin-mobile py-3">
+<div class="relative w-full h-72 rounded-3xl overflow-hidden border border-outline-variant/30 shadow-md bg-surface-container-high">
+<!-- Map Canvas (Vector Architectural Style of Sana'a Hadda St) -->
+<div class="absolute inset-0 bg-[#e8e4dc] overflow-hidden">
+<!-- Simplified Architectural Grid & Blocks representing Sana'a city fabric -->
+<svg class="w-full h-full object-cover opacity-85" preserveaspectratio="none" viewbox="0 0 400 320" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient id="routeGrad" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#a2482b"></stop>
+<stop offset="100%" stop-color="#775a19"></stop>
+</lineargradient>
+</defs>
+<!-- Land parcels -->
+<rect fill="#f4f0e8" height="70" rx="6" stroke="#dfd9cd" stroke-width="1.5" width="85" x="10" y="10"></rect>
+<rect fill="#f4f0e8" height="60" rx="6" stroke="#dfd9cd" stroke-width="1.5" width="120" x="110" y="15"></rect>
+<rect fill="#f4f0e8" height="75" rx="6" stroke="#dfd9cd" stroke-width="1.5" width="140" x="245" y="10"></rect>
+<rect fill="#f4f0e8" height="85" rx="6" stroke="#dfd9cd" stroke-width="1.5" width="90" x="15" y="100"></rect>
+<rect fill="#eee8dc" height="90" rx="6" stroke="#dfd9cd" stroke-width="1.5" width="105" x="120" y="95"></rect>
+<rect fill="#f4f0e8" height="80" rx="6" stroke="#dfd9cd" stroke-width="1.5" width="145" x="240" y="105"></rect>
+<rect fill="#f4f0e8" height="100" rx="6" stroke="#dfd9cd" stroke-width="1.5" width="100" x="10" y="205"></rect>
+<rect fill="#f4f0e8" height="95" rx="6" stroke="#dfd9cd" stroke-width="1.5" width="115" x="125" y="210"></rect>
+<rect fill="#f4f0e8" height="100" rx="6" stroke="#dfd9cd" stroke-width="1.5" width="130" x="255" y="205"></rect>
+<!-- Main Avenues (Hadda Street & Diplomatic crossways) -->
+<path d="M-10,90 L420,90" fill="none" stroke="#ffffff" stroke-width="18"></path>
+<path d="M-10,195 L420,195" fill="none" stroke="#ffffff" stroke-width="14"></path>
+<path d="M110,-10 L110,340" fill="none" stroke="#ffffff" stroke-width="16"></path>
+<path d="M235,-10 L235,340" fill="none" stroke="#ffffff" stroke-width="14"></path>
+<!-- Route Track -->
+<!-- Start: Alshaibany Restaurant (top right 320, 60), Waypoint (110, 90), Waypoint (110, 195), End: Customer Villa (60, 250) -->
+<path d="M320,65 L235,90 L110,90 L110,195 L65,225 L55,255" fill="none" stroke="#a2482b" stroke-dasharray="8 6" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"></path>
+<!-- Traveled portion (Solid) -->
+<path d="M320,65 L235,90 L110,90 L110,145" fill="none" stroke="#833116" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"></path>
+</svg>
+<!-- Restaurant Marker (Start point) -->
+<div class="absolute top-[48px] right-[65px] flex flex-col items-center pointer-events-none transform translate-x-1/2 -translate-y-1/2">
+<div class="bg-primary text-on-primary w-9 h-9 rounded-full flex items-center justify-center shadow-lg border-2 border-white ring-2 ring-primary/20">
+<span class="material-symbols-outlined text-[18px]">restaurant</span>
+</div>
+<span class="bg-surface/95 backdrop-blur-sm text-primary text-[10px] font-bold px-2 py-0.5 rounded shadow-sm border border-outline-variant/30 mt-1 whitespace-nowrap">
+              مطاعم الشيباني
+            </span>
+</div>
+<!-- Live Driver Courier Pin in transit -->
+<div class="absolute top-[138px] left-[105px] transform -translate-x-1/2 -translate-y-1/2 z-20 flex flex-col items-center">
+<!-- Pulsing radar glow -->
+<div class="absolute w-12 h-12 bg-primary/25 rounded-full animate-pulse-ring"></div>
+<div class="relative bg-white text-primary w-10 h-10 rounded-full flex items-center justify-center shadow-xl border-2 border-primary">
+<span class="material-symbols-outlined text-[20px] text-primary" data-weight="fill" style="font-variation-settings: 'FILL' 1;">moped</span>
+</div>
+<div class="bg-inverse-surface text-surface text-[9px] font-semibold px-2 py-0.5 rounded-full mt-1 shadow-md whitespace-nowrap flex items-center gap-1">
+<span>الكابتن مروان</span>
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block animate-ping"></span>
+</div>
+</div>
+<!-- Destination Marker (Customer Home) -->
+<div class="absolute bottom-[48px] left-[45px] transform -translate-x-1/2 -translate-y-1/2 z-10 flex flex-col items-center pointer-events-none">
+<div class="bg-secondary text-white w-9 h-9 rounded-full flex items-center justify-center shadow-lg border-2 border-white ring-2 ring-secondary/20">
+<span class="material-symbols-outlined text-[18px]">home_pin</span>
+</div>
+<span class="bg-surface/95 backdrop-blur-sm text-on-surface text-[10px] font-bold px-2 py-0.5 rounded shadow-sm border border-outline-variant/30 mt-1 whitespace-nowrap">
+              الحي الدبلوماسي - فيلا 14
+            </span>
+</div>
+</div>
+<!-- Floating Map Overlay Controls -->
+<div class="absolute top-3 right-3 flex flex-col gap-2 z-30">
+<button aria-label="إعادة التوسيط" class="w-9 h-9 bg-surface/90 backdrop-blur-md rounded-full shadow-md flex items-center justify-center text-on-surface hover:bg-surface active:scale-90 transition-transform" type="button">
+<span class="material-symbols-outlined text-[19px]">my_location</span>
+</button>
+<button aria-label="عرض كامل للخريطة" class="w-9 h-9 bg-surface/90 backdrop-blur-md rounded-full shadow-md flex items-center justify-center text-on-surface hover:bg-surface active:scale-90 transition-transform" type="button">
+<span class="material-symbols-outlined text-[19px]">fullscreen</span>
+</button>
+</div>
+<!-- Map Bottom Ticker / Street Details -->
+<div class="absolute bottom-3 right-3 left-3 bg-surface/95 backdrop-blur-md rounded-xl p-2.5 shadow-sm border border-outline-variant/40 flex items-center justify-between z-30">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">near_me</span>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant">المسار الحالي</p>
+<p class="font-label-md text-label-md text-on-surface font-semibold truncate max-w-[190px]">شارع حدة العام • مقترب من جولة الرويشان</p>
+</div>
+</div>
+<span class="text-label-caps font-label-caps px-2 py-1 rounded bg-secondary-container text-on-secondary-container">
+            
+          </span>
+</div>
+</div>
+</div>
+<!-- Live Status Stepper Card (حالة الطلب اللحظية) -->
+<div class="px-margin-mobile py-2">
+<div class="bg-surface-container-lowest rounded-3xl p-5 border border-outline-variant/30 shadow-sm">
+<div class="flex items-center justify-between pb-3 border-b border-surface-container">
+<div class="flex items-center gap-2">
+<div class="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">حالة الطلب اللحظية</h2>
+</div>
+<span class="font-label-md text-label-md text-primary font-bold bg-primary-fixed/40 px-2.5 py-0.5 rounded-full">
+            المرحلة 4 من 5
+          </span>
+</div>
+<!-- Milestones list -->
+<div class="mt-4 space-y-4 relative">
+<!-- Continuous vertical connection line -->
+<div class="absolute top-3 bottom-3 right-4 w-0.5 bg-outline-variant/30 -z-0"></div>
+<!-- Step 1: Confirmed (Completed) -->
+<div class="flex items-start gap-3.5 relative z-10">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-sm shrink-0">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<div class="flex-1 pt-0.5">
+<div class="flex items-center justify-between">
+<p class="font-label-lg text-label-lg text-on-surface font-semibold">تم استلام وتأكيد الطلب</p>
+<span class="font-body-sm text-body-sm text-on-surface-variant">08:12 م</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">تم اعتماد الطلب من فرع شارع حدة الرئيسي</p>
+</div>
+</div>
+<!-- Step 2: Cooking in Haradh & Tannour (Completed) -->
+<div class="flex items-start gap-3.5 relative z-10">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-sm shrink-0">
+<span class="material-symbols-outlined text-[16px]">soup_kitchen</span>
+</div>
+<div class="flex-1 pt-0.5">
+<div class="flex items-center justify-between">
+<p class="font-label-lg text-label-lg text-on-surface font-semibold">طهي في الحَرَضة الحجرية والتنور</p>
+<span class="font-body-sm text-body-sm text-on-surface-variant">08:26 م</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">فوران السلتة الملكية وخبز الملوّح الطازج بالسمن البلدي</p>
+</div>
+</div>
+<!-- Step 3: Packed in thermal bag (Completed) -->
+<div class="flex items-start gap-3.5 relative z-10">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-sm shrink-0">
+<span class="material-symbols-outlined text-[16px]">inventory_2</span>
+</div>
+<div class="flex-1 pt-0.5">
+<div class="flex items-center justify-between">
+<p class="font-label-lg text-label-lg text-on-surface font-semibold">استلم الكابتن الحقيبة الحرارية</p>
+<span class="font-body-sm text-body-sm text-on-surface-variant">08:34 م</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">إحكام الإغلاق في أوعية فخارية مخصصة للحرارة</p>
+</div>
+</div>
+<!-- Step 4: Out for delivery (ACTIVE NOW) -->
+<div class="flex items-start gap-3.5 relative z-10">
+<div class="w-8 h-8 rounded-full bg-primary-container text-white flex items-center justify-center shadow-md ring-4 ring-primary-fixed shrink-0">
+<span class="material-symbols-outlined text-[18px] animate-bounce">moped</span>
+</div>
+<div class="flex-1 pt-0.5 bg-surface-container-low rounded-2xl p-3 border border-outline-variant/40">
+<div class="flex items-center justify-between">
+<p class="font-label-lg text-label-lg text-primary font-bold">في الطريق إلى موقعك</p>
+<span class="font-label-caps text-label-caps bg-primary text-white px-2 py-0.5 rounded-full">الآن</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface mt-1">
+                الكابتن على مسافة <span class="font-bold text-primary">1.8 كم</span> (شارع حدة، بجوار الحي الدبلوماسي).
+              </p>
+<!-- Thermal Assurance Notice -->
+<div class="mt-2.5 flex items-center gap-2 bg-secondary-fixed/30 rounded-xl p-2 border border-secondary/20">
+<span class="material-symbols-outlined text-[18px] text-secondary">local_fire_department</span>
+<p class="font-body-sm text-body-sm text-on-secondary-fixed-variant leading-snug">
+                  حقيبة حرارية خاصة لضمان وصول السلتة بدرجة فوران الحَرَضة والصحن الحجري.
+                </p>
+</div>
+</div>
+</div>
+<!-- Step 5: Delivered (Pending) -->
+<div class="flex items-start gap-3.5 relative z-10 opacity-55">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-outline flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[16px]">celebration</span>
+</div>
+<div class="flex-1 pt-0.5">
+<div class="flex items-center justify-between">
+<p class="font-label-lg text-label-lg text-on-surface font-medium">الاستمتاع بوليمة الشيباني</p>
+<span class="font-body-sm text-body-sm text-on-surface-variant">قيد الانتظار</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">تقديم كود الاستلام الآمن للكابتن عند الباب</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Delivery Driver Profile Card -->
+<div class="px-margin-mobile py-2">
+<div class="bg-surface-container-lowest rounded-3xl p-4 border border-outline-variant/30 shadow-sm flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="relative w-14 h-14 rounded-2xl overflow-hidden border border-outline-variant/40 shadow-sm shrink-0">
+<img class="w-full h-full object-cover" data-alt="A dignified and warm portrait of an authentic Yemeni delivery courier in Sana'a wearing an elegant terracotta polo shirt and traditional keffiyeh neatly pinned, captured with cinematic soft daylight and warm sandy earth tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxeFy-6YsBBH1dosdImjMCvhUuUaJ9c15u_eh1blhyJ59Ya5_482lyfbw_jb4_MBIh3SYl2TU43eSVq8Uikm_DVZdk113-HZWX0ZRtCC6mHzX3b9yOGhZhcNEozfMFDYnepeCakXXcahj6MqR8T-IweVjn9mM3VnWGyTzIJ1mTNsxpyoZcqDAkbLCAoeuHljb79FDPSo39vX_AdmtIk1DnJmri7vDM_Kza-tuJhWliKY_BZQFbznk"/>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-emerald-500 border-2 border-white rounded-full"></span>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">مندوب التوصيل (بيانات تجريبية)</h3>
+<span class="material-symbols-outlined text-[16px] text-secondary" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="inline-flex items-center gap-0.5 text-secondary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[14px]" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>4.9</span>
+</span>
+<span class="text-outline-variant">•</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">850+ رحلة توصيل ممتازة</span>
+</div>
+<p class="font-body-sm text-body-sm text-outline mt-0.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">two_wheeler</span>
+<span>دراجة خاصة مزودة بوعاء حراري مقفل</span>
+</p>
+</div>
+</div>
+</div>
+<!-- Driver Direct Contact Triggers -->
+<div class="grid grid-cols-2 gap-2.5 pt-1">
+<a class="h-11 rounded-full bg-primary text-on-primary flex items-center justify-center gap-1.5 font-label-md text-label-md hover:bg-primary-container active:scale-95 transition-all shadow-sm" href="tel:+967771234567">
+<span class="material-symbols-outlined text-[18px]">call</span>
+<span>اتصال بالكابتن</span>
+</a>
+<button class="h-11 rounded-full bg-surface-container text-tertiary border border-outline-variant/40 flex items-center justify-center gap-1.5 font-label-md text-label-md hover:bg-surface-container-high active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+<span>محادثة فورية</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Order Summary Accordion / Quick Peek -->
+<div class="px-margin-mobile py-2">
+<details class="group bg-surface-container-lowest rounded-3xl border border-outline-variant/30 shadow-sm overflow-hidden" open="">
+<summary class="flex items-center justify-between p-4 cursor-pointer select-none bg-surface-container-low/60 hover:bg-surface-container-high/40 transition-colors">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-xl bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">receipt_long</span>
+</div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface font-bold">محتويات الوليمة (3 أصناف)</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">إجمالي الطلب التجريبي: 13,240 ر.ي (محفظة كاش)</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline-variant transition-transform duration-200 group-open:rotate-180">expand_more</span>
+</summary>
+<div class="p-4 pt-2 border-t border-surface-container space-y-3">
+<!-- Item 1 -->
+<div class="flex items-center justify-between gap-3 py-1.5 border-b border-surface-container-low">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-xl overflow-hidden shrink-0 border border-outline-variant/20">
+<img class="w-full h-full object-cover" data-alt="A gourmet close-up of piping hot authentic Yemeni Salta bubbling intensely in a dark stone bowl with golden fenugreek froth on top, garnished with green chili and served alongside freshly baked crispy mulawah bread on a refined wooden board." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNMAjF31rNIraZmF1ZgPWhmQc48U2EXCHIM4jVUPJHfdxv2zEny9PXi_4e2jKjYuvUyD9cYdmB9wEOB58Dxh-lideD9UziZR_t_LNcb-ouuBpprKIZQ0YaAM8UoMacoYBeLuonHNqLENWvOCTUryJLkkMWccvBV9LIexewAvCtfyGpYJNMbTl5F5YAeW6ir2Fbf_eTwl8umhpgpUZh0JgX3yLPJI_gCFM8cT4_fuPxSbTucJUHpdY"/>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-bold">1x سلتة ملكية باللحم البلدي الصنعاني</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">مع 2 قرص خبز ملوّح مقرمش بالسمن</p>
+</div>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-semibold whitespace-nowrap">5,800 ر.ي</span>
+</div>
+<!-- Item 2 -->
+<div class="flex items-center justify-between gap-3 py-1.5 border-b border-surface-container-low">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-xl overflow-hidden shrink-0 border border-outline-variant/20">
+<img class="w-full h-full object-cover" data-alt="A luxurious plate of Adeni Lamb Zurbian with deeply fragrant smoked basmati rice, tender roasted lamb infused with saffron and whole cardamom pods, served in a high-end luxury dining setting with warm candlelight and brass tableware." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOgaK7LlPkph3T2Rj52CAVr3TY_WigTfQ4RVzGg5kZY37Yy8cVkRQcFiQKWO5A1V9wMS_VoUSNpIYum4pY9XAR2mbF0Vx_VbMqzTw2geRfZRrKjo2YlYFEZMpEDTKkN_GRJLfNRakkNvaLLpVeiAYMyOySfIFtf0YckSEcdwFCrk4I0PMGshm17b3V6YWhv_efhNKBIGdHULGT6XeF7rHJPjh9EM0YgBxp_-9m6u55Nkn8e0N88rQ"/>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-bold">1x زربيان لحم عدني مدخن VIP</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">أرز بسمتي فاخر بالزعفران والمكسرات</p>
+</div>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-semibold whitespace-nowrap">6,500 ر.ي</span>
+</div>
+<!-- Item 3 -->
+<div class="flex items-center justify-between gap-3 py-1.5">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-xl overflow-hidden shrink-0 border border-outline-variant/20">
+<img class="w-full h-full object-cover" data-alt="Traditional Yemeni spiced Qishr coffee being gently poured from an ornate hand-hammered brass dallah into an artisanal ceramic finjan, emitting gentle steam amidst warm ambient terracotta lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmKdpWve3NJ-kmKNvEtP8xHux6FsHt9uqQCyAYOLciAbkmYLBpgGW8x0EFPpqPeR4mCjrjv6Mrvlf-fltuuuQXm80rynC1qbK0dfoCFqUpXdMW9YZXvXM_qsF6Ta1zhlpLmluwT9bzvmvmWYZHxwt1PFMUOesQxpGZ85g7rqqFxbnlNBgWYIm4bn-IynX44xvzY_CGbjJsxdt681iCTpFzr36yVrjnfLZ9mHJOqXZVSvqgJd40uYg"/>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-bold">1x دلة قهوة قشر صنعانية نحاسية</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">مبهرة بالزنجبيل والقرفة والهيل الخولاني</p>
+</div>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-semibold whitespace-nowrap">940 ر.ي</span>
+</div>
+<!-- Delivery Instruction Box -->
+<div class="bg-surface-container-low rounded-2xl p-3 border border-outline-variant/30 mt-2">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary shrink-0 mt-0.5">location_on</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-bold">عنوان التسليم والملاحظات:</p>
+<p class="font-body-sm text-body-sm text-on-surface mt-0.5">
+                  شارع حدة، خلف مجمع السفارات - فيلا 14 (البوابة البيضاء).
+                </p>
+<p class="font-body-sm text-body-sm text-primary font-semibold mt-1">
+                  ملاحظة للطلب: "يرجى رن الجرس بجانب البوابة الرئيسية - السلتة تكون ساخنة جداً، تسلم لليد مباشرة."
+                </p>
+</div>
+</div>
+</div>
+</div>
+</details>
+</div>
+<!-- Bottom Floating Sticky Action Bar (Fixed Destination Tray) -->
+<div class="fixed bottom-0 left-0 right-0 z-50 max-w-md mx-auto p-3">
+<div class="bg-surface/95 backdrop-blur-xl border border-outline-variant/40 rounded-3xl p-3 shadow-2xl flex flex-col gap-2.5">
+<!-- Secure Handshake OTP PIN -->
+<div class="flex items-center justify-between bg-surface-container-lowest rounded-2xl px-4 py-2 border border-outline-variant/30">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-secondary">security</span>
+<span class="font-body-sm text-body-sm text-on-surface">رمز استلام الطلب الآمن:</span>
+</div>
+<!-- 4-digit PIN Badges -->
+<div class="flex items-center gap-1.5 dir-ltr">
+<span class="w-7 h-7 rounded-lg bg-primary-fixed text-primary font-headline-sm text-[15px] font-bold flex items-center justify-center">4</span>
+<span class="w-7 h-7 rounded-lg bg-primary-fixed text-primary font-headline-sm text-[15px] font-bold flex items-center justify-center">9</span>
+<span class="w-7 h-7 rounded-lg bg-primary-fixed text-primary font-headline-sm text-[15px] font-bold flex items-center justify-center">2</span>
+<span class="w-7 h-7 rounded-lg bg-primary-fixed text-primary font-headline-sm text-[15px] font-bold flex items-center justify-center">0</span>
+</div>
+</div>
+<!-- Main Trigger Button -->
+<div class="flex items-center gap-2">
+<button class="flex-1 h-12 rounded-full bg-primary text-on-primary font-label-lg text-label-lg flex items-center justify-center gap-2 shadow-lg hover:bg-primary-container active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">share_location</span>
+<span>مشاركة مسار التتبع المباشر</span>
+</button>
+<button aria-label="عرض الفاتورة" class="w-12 h-12 rounded-full bg-surface-container text-on-surface border border-outline-variant/40 flex items-center justify-center hover:bg-surface-container-high active:scale-95 transition-all shrink-0" type="button">
+<span class="material-symbols-outlined text-[20px]">description</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+
+
+</body></html>

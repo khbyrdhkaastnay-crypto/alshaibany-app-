@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+
+<html class="light" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>مطاعم الشيباني — المذاق الصنعاني الأصيل</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&amp;family=Amiri:ital,wght@0,400;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Script -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "inverse-surface": "#31302d",
+            "surface-variant": "#e5e2dd",
+            "tertiary-container": "#4a648c",
+            "on-error-container": "#93000a",
+            "tertiary-fixed": "#d5e3ff",
+            "background": "#fcf9f4",
+            "surface-container-highest": "#e5e2dd",
+            "surface-container-lowest": "#ffffff",
+            "on-primary-fixed": "#3a0b00",
+            "on-secondary": "#ffffff",
+            "on-secondary-fixed-variant": "#5d4201",
+            "secondary-fixed-dim": "#e9c176",
+            "outline-variant": "#dcc1b9",
+            "outline": "#89726c",
+            "on-surface-variant": "#56423d",
+            "on-primary-fixed-variant": "#7d2d12",
+            "secondary": "#775a19",
+            "secondary-fixed": "#ffdea5",
+            "surface-container-low": "#f6f3ee",
+            "surface": "#fcf9f4",
+            "on-tertiary": "#ffffff",
+            "error-container": "#ffdad6",
+            "on-surface": "#1c1c19",
+            "primary-container": "#a2482b",
+            "on-tertiary-fixed-variant": "#2d486d",
+            "error": "#ba1a1a",
+            "surface-container-high": "#ebe8e3",
+            "inverse-on-surface": "#f3f0eb",
+            "tertiary-fixed-dim": "#adc8f5",
+            "on-primary-container": "#ffd8cc",
+            "inverse-primary": "#ffb59e",
+            "primary-fixed": "#ffdbd0",
+            "surface-tint": "#9c4327",
+            "on-tertiary-fixed": "#001c3b",
+            "on-primary": "#ffffff",
+            "surface-dim": "#dcdad5",
+            "on-secondary-fixed": "#261900",
+            "primary": "#833116",
+            "on-secondary-container": "#785a1a",
+            "primary-fixed-dim": "#ffb59e",
+            "on-tertiary-container": "#d1e1ff",
+            "on-error": "#ffffff",
+            "tertiary": "#314c72",
+            "secondary-container": "#fed488",
+            "surface-container": "#f0ede9",
+            "surface-bright": "#fcf9f4",
+            "on-background": "#1c1c19"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1rem",
+            "3xl": "1.5rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin-mobile": "1.25rem",
+            "space-md": "1rem",
+            "space-xl": "2.25rem",
+            "margin": "1.5rem",
+            "gutter": "1rem",
+            "space-lg": "1.5rem",
+            "gutter-mobile": "0.75rem",
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem"
+          },
+          "fontFamily": {
+            "headline-sm": ["Cairo", "Plus Jakarta Sans", "sans-serif"],
+            "label-lg": ["Cairo", "Plus Jakarta Sans", "sans-serif"],
+            "display-hero-mobile": ["Cairo", "Plus Jakarta Sans", "sans-serif"],
+            "label-md": ["Cairo", "Plus Jakarta Sans", "sans-serif"],
+            "display-hero": ["Cairo", "Plus Jakarta Sans", "sans-serif"],
+            "headline-md": ["Cairo", "Plus Jakarta Sans", "sans-serif"],
+            "headline-lg": ["Cairo", "Plus Jakarta Sans", "sans-serif"],
+            "body-sm": ["Cairo", "Plus Jakarta Sans", "sans-serif"],
+            "body-lg": ["Cairo", "Plus Jakarta Sans", "sans-serif"],
+            "label-caps": ["Cairo", "Plus Jakarta Sans", "sans-serif"],
+            "body-md": ["Cairo", "Plus Jakarta Sans", "sans-serif"],
+            "arabic": ["Cairo", "Amiri", "sans-serif"]
+          },
+          "fontSize": {
+            "headline-sm": ["18px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "600"}],
+            "label-lg": ["14px", {"lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+            "display-hero-mobile": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+            "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+            "display-hero": ["38px", {"lineHeight": "46px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "headline-md": ["22px", {"lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "600"}],
+            "headline-lg": ["26px", {"lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "body-sm": ["12px", {"lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+            "body-lg": ["16px", {"lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+            "label-caps": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700"}],
+            "body-md": ["14px", {"lineHeight": "22px", "letterSpacing": "0.01em", "fontWeight": "400"}]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-scroll::-webkit-scrollbar {
+      display: none;
+    }
+    .custom-scroll {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .clay-card-shadow {
+      box-shadow: 0 4px 20px -2px rgba(162, 72, 43, 0.05), 0 2px 6px -1px rgba(28, 25, 23, 0.03);
+    }
+    .nav-floating-shadow {
+      box-shadow: 0 12px 32px -4px rgba(28, 25, 23, 0.12), 0 4px 12px -2px rgba(197, 160, 89, 0.08);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+      font-family: 'Cairo', 'Plus Jakarta Sans', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface antialiased font-body-md min-h-screen pb-32">
+
+<div id="prototype-note" role="note">نسخة معاينة فقط — الأسعار تجريبية وتحتاج إلى مراجعة الإدارة قبل النشر. لا يتم إرسال الطلبات فعليًا.</div>
+<section id="branch-panel" aria-label="اختيار الفرع">
+  <label for="branch-select">الفرع الذي تريد الطلب منه</label>
+  <select id="branch-select">
+    <option value="">اختر الفرع</option>
+    <option value="haddah">حدة — صنعاء (بيانات الفرع تحتاج إلى تأكيد)</option>
+    <option value="other">فرع آخر (تُضاف بياناته بعد تأكيد الإدارة)</option>
+  </select>
+  <p>سيُتاح اختيار جميع الفروع بعد إدخال قائمة الفروع وعناوينها المعتمدة.</p>
+</section>
+<nav id="prototype-nav" aria-label="التنقل بين الشاشات">
+  <a href="home.html">الرئيسية</a><a href="dish.html">الوجبات</a><a href="cart.html">السلة</a><a href="tracking.html">حالة الطلب</a>
+</nav>
+<style id="prototype-v2-style">
+#prototype-note{direction:rtl;background:#fff1cf;color:#654315;border-bottom:1px solid #e5c57c;padding:10px 14px;text-align:center;font:700 12px/1.7 system-ui,sans-serif;position:relative;z-index:10000}
+#branch-panel{direction:rtl;position:relative;z-index:9997;margin:0 auto;padding:10px 14px;background:#fffaf1;border-bottom:1px solid #eadcc9;font-family:system-ui,sans-serif;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+#branch-panel label{font-size:12px;font-weight:700;color:#5b2b17}
+#branch-panel select{flex:1;min-width:180px;padding:9px 10px;border:1px solid #d9c4b2;border-radius:10px;background:#fff;color:#38271d;font-size:13px}
+#branch-panel p{width:100%;margin:0;color:#795f4d;font-size:11px}
+#prototype-nav{position:fixed;z-index:10001;bottom:0;left:0;right:0;display:flex;justify-content:space-around;gap:5px;direction:rtl;background:rgba(255,255,255,.98);border-top:1px solid #e6d9ce;padding:10px 8px calc(10px + env(safe-area-inset-bottom));box-shadow:0 -4px 18px rgba(35,20,10,.08);font-family:system-ui,sans-serif}
+#prototype-nav a{flex:1;text-align:center;text-decoration:none;color:#743018;font-size:12px;font-weight:700;padding:8px 3px;border-radius:9px;background:#fff8ef}
+body{padding-bottom:80px!important}
+/* Hide legacy navigation that exposes unsupported booking/review features in this order-only prototype. */
+body > nav:not(#prototype-nav){display:none!important}
+</style>
+<script>
+(function(){
+  const key='alshaibany-selected-branch';
+  const select=document.getElementById('branch-select');
+  if(select){try{select.value=localStorage.getItem(key)||'';select.addEventListener('change',()=>{localStorage.setItem(key,select.value);if(select.value==='other')alert('هذه معاينة فقط. يلزم إدخال أسماء الفروع وعناوينها المعتمدة من إدارة المطاعم.');});}catch(e){}}
+  document.addEventListener('click',function(ev){
+    const el=ev.target.closest('button,a');if(!el)return;
+    const label=(el.innerText||el.getAttribute('aria-label')||'').replace(/\s+/g,' ').trim();
+    const page=location.pathname.split('/').pop();
+    if(page==='home.html' && (label.includes('اطلب الآن')||label.includes('استكشف القائمة'))){ev.preventDefault();location.href='dish.html';return;}
+    if(page==='cart.html' && (label.includes('تأكيد ودفع الطلب')||label.includes('تأكيد الطلب'))){ev.preventDefault();alert('هذه معاينة فقط: لم يُرسل الطلب ولم يتم الدفع.');location.href='tracking.html';return;}
+  });
+})();
+</script>
+
+<!-- Top Status & Location Bar -->
+<header class="fixed top-0 left-0 w-full z-40 flex items-center justify-between px-4 py-3 bg-surface/90 dark:bg-inverse-surface/90 backdrop-blur-md border-b border-outline-variant/30">
+<div class="flex items-center gap-2.5">
+<button aria-label="الموقع" class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary active:scale-95 transition-transform flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]" data-icon="location_on">location_on</span>
+</button>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-headline-md text-headline-md tracking-tight font-bold text-primary">مطاعم الشيباني</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1">
+<span>شارع حدة، الحي الدبلوماسي</span>
+<span class="inline-block w-1 h-1 rounded-full bg-outline"></span>
+<span class="text-secondary font-medium">صنعاء</span>
+</p>
+</div>
+</div>
+<div class="flex items-center gap-2 flex-shrink-0">
+<a aria-label="اتصل بمطاعم الشيباني" class="w-10 h-10 rounded-full bg-surface-container-high text-primary flex items-center justify-center active:scale-95 transition-transform shadow-sm" href="tel:+9671420000">
+<span class="material-symbols-outlined text-[20px]" data-icon="call">call</span>
+</a>
+<button aria-label="الإشعارات" class="w-10 h-10 rounded-full bg-surface-container text-on-surface flex items-center justify-center relative active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[20px]" data-icon="notifications">notifications</span>
+<span class="absolute top-2 left-2 w-2 h-2 rounded-full bg-primary ring-2 ring-surface"></span>
+</button>
+</div>
+</header>
+<!-- Main Scrollable Canvas -->
+<main class="pt-20 px-4 max-w-md mx-auto space-y-5">
+<!-- Store Status & Operational Micro-Card -->
+<section class="bg-surface-container-lowest rounded-2xl p-3.5 clay-card-shadow border border-outline-variant/30 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="flex items-center gap-1.5 bg-surface-container px-2.5 py-1 rounded-full">
+<span class="material-symbols-outlined text-secondary text-[16px]" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">4.2</span>
+<span class="text-on-surface-variant text-[11px] font-normal">(عدد التقييمات غير مؤكد)</span>
+</div>
+<div class="flex items-center gap-1.5 bg-secondary-fixed/30 text-on-secondary-fixed-variant px-2.5 py-1 rounded-full">
+<span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
+<span class="font-label-md text-label-md font-medium">ساعات العمل تحتاج إلى تأكيد</span>
+</div>
+</div>
+<a class="text-primary font-label-md text-label-md flex items-center gap-0.5 hover:underline font-mono" dir="ltr" href="tel:+9671420000">
+<span>+967 1 420 000</span>
+</a>
+</section>
+<!-- Hero Showcase: Rooftop Highlight -->
+<section class="relative rounded-3xl overflow-hidden clay-card-shadow border border-outline-variant/30">
+<div class="relative h-64 w-full">
+<img class="w-full h-full object-cover" data-alt="Luxurious rooftop terrace dining in Sana'a at twilight overlooking traditional Yemeni mudbrick towers. Elaborate stained glass Qamariya arched windows glow with vibrant amber and turquoise light. Ornate hammered brass lamps illuminate low clay-toned majlis banquettes around glowing bronze fire pits. Photorealistic culinary lifestyle travel photography, warm terracotta palette, cozy ambient lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsIinws6FbyX93s2QabRYg5AW-2WnMJVXqk31_in8Ke9fnRAHjbRz8D9F6YqhN0ApeC2tch-cgYUuxn5Vyg7CEBWt0HcSlFGqahDN4KwVB8ETk4oGMoMNHufWOr7DWAJsphCGIqkEGVqDTXbTVc3GX_c5_L_nO7NjOr1ieBN-bCtbKNS7-3FPpjRUciDzkwrNDnZVLyrxA3IWF2DKeMC9zDhJ4D9nIzdaj4Y4qVa1bB94q5uZ3-FM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/90 via-inverse-surface/40 to-transparent"></div>
+<!-- Badge -->
+<div class="absolute top-3 right-3 flex items-center gap-1.5 bg-surface-container-lowest/90 backdrop-blur-md px-3 py-1 rounded-full border border-secondary-fixed-dim/40 shadow-sm">
+<span class="material-symbols-outlined text-secondary text-[15px]" data-icon="hotel_class" data-weight="fill" style="font-variation-settings: 'FILL' 1;">hotel_class</span>
+<span class="font-label-caps text-label-caps text-on-surface uppercase tracking-wider">تجربة مميزة</span>
+</div>
+<!-- Content Overlay -->
+<div class="absolute bottom-4 left-4 right-4 text-surface-bright">
+<div class="flex items-baseline justify-between mb-1">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-surface-bright tracking-tight">شرفة صنعاء المعلقة</h2>
+<span class="text-surface-variant/80 text-sm font-medium">إطلالة أصيلة</span>
+</div>
+<p class="font-body-sm text-body-sm text-surface-variant mb-3 line-clamp-1">
+            إطلالة بانورامية على الجبال مع تفاصيل قمرية تقليدية
+          </p>
+<div class="flex items-center gap-2.5">
+<button class="flex-1 bg-primary-container text-on-primary py-2.5 px-4 rounded-full font-label-md text-label-md font-semibold flex items-center justify-center gap-1.5 shadow-md active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[18px]" data-icon="table_restaurant">table_restaurant</span>
+<span>اطلب الآن</span>
+</button>
+<button class="bg-surface-bright/20 backdrop-blur-md text-surface-bright px-3.5 py-2.5 rounded-full font-label-md text-label-md border border-surface-bright/30 active:scale-95 transition-transform flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]" data-icon="visibility">visibility</span>
+<span>استكشف القائمة</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Quick Action Filter Chips (Horizontal Scroll) -->
+<section>
+<div class="flex items-center gap-2 overflow-x-auto custom-scroll py-1 -mx-4 px-4">
+<!-- Active Chip -->
+<button class="flex-shrink-0 flex items-center gap-1.5 px-4 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md shadow-sm active:scale-95 transition-all">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed"></span>
+<span>كل العروض الخاصة</span>
+</button>
+<button class="flex-shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-surface-container border border-outline-variant/40 text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high transition-colors active:scale-95">
+<span class="material-symbols-outlined text-[16px] text-secondary" data-icon="deck">deck</span>
+<span>جلسات السطح والشرفة</span>
+</button>
+<button class="flex-shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-surface-container border border-outline-variant/40 text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high transition-colors active:scale-95">
+<span class="material-symbols-outlined text-[16px] text-primary" data-icon="coffee">coffee</span>
+<span>قهوة مختصة وقشر</span>
+</button>
+<button class="flex-shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-surface-container border border-outline-variant/40 text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high transition-colors active:scale-95">
+<span class="material-symbols-outlined text-[16px] text-tertiary" data-icon="family_restroom">family_restroom</span>
+<span>عائلي وخاص</span>
+</button>
+<button class="flex-shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-surface-container border border-outline-variant/40 text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high transition-colors active:scale-95">
+<span class="material-symbols-outlined text-[16px] text-primary" data-icon="local_fire_department">local_fire_department</span>
+<span>سلتة حامية</span>
+</button>
+</div>
+</section>
+<!-- Menu Category Highlights Header -->
+<section class="space-y-3">
+<div class="flex items-center justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface">قائمة طعام مختارة</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">أطباق أصيلة وتراثية من صنعاء وحضرموت</p>
+</div>
+<button class="font-label-md text-label-md text-primary font-semibold flex items-center gap-0.5 hover:underline">
+<span>عرض الكل</span>
+<span class="material-symbols-outlined text-[16px] rotate-180" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+<!-- Category Tabs -->
+<div class="flex items-center gap-3 overflow-x-auto custom-scroll border-b border-outline-variant/30 pb-2.5">
+<button class="font-label-md text-label-md font-semibold text-primary pb-1 border-b-2 border-primary whitespace-nowrap">
+          أكلات يمنية أصيلة
+        </button>
+<button class="font-label-md text-label-md font-medium text-on-surface-variant hover:text-on-surface whitespace-nowrap">
+          قهوة مختصة وقشر
+        </button>
+<button class="font-label-md text-label-md font-medium text-on-surface-variant hover:text-on-surface whitespace-nowrap">
+          فطور ومخبوزات
+        </button>
+<button class="font-label-md text-label-md font-medium text-on-surface-variant hover:text-on-surface whitespace-nowrap">
+          أطباق نباتية
+        </button>
+<button class="font-label-md text-label-md font-medium text-on-surface-variant hover:text-on-surface whitespace-nowrap">
+          حلويات ومعصوب
+        </button>
+</div>
+</section>
+<!-- Rich Product Cards Grid -->
+<section class="grid grid-cols-1 gap-4">
+<!-- Card 1: Royal Saltah Claypot -->
+<div class="bg-surface-container-lowest rounded-3xl p-3.5 clay-card-shadow border border-outline-variant/30 flex gap-3.5 transition-all hover:border-outline-variant">
+<div class="relative w-28 h-32 rounded-2xl overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Traditional Yemeni Saltah bubbling vigorously inside a heavy black soapstone haradah bowl with thick golden-green frothy hulba fenugreek foam on top. Glistening spiced meat gravy, charred green chilies, and a steaming warm folded tawa bread alongside. Studio lighting with warm earthy terracotta reflections and rustic textured linen." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnoXriGbmtYhLGAZ08XlU-jzRdmAFnVcomfcyXtaXu-1hV4F8TqTdWgHiOtQ5EcedaRMJla1Q3cOLdKlm6j754LWyHBWGaLjcT5Sv5MbfrBCTTUV4S5ZFZxyFOGiLUXybqDytksleQ5PNMIEHgYfduND_5e6nCRkR8bLNDmDMlTJk_KK3MTpBa9uDkUBkbtFbCPaV7ZL2W6TGMDO6TQ6fNTdzcs-ytvVgs__88S2pK9flDu1Wa6kE"/>
+<span class="absolute top-1.5 right-1.5 bg-tertiary text-on-tertiary text-[10px] font-bold px-2 py-0.5 rounded-full">
+            اختيار الشيف
+          </span>
+</div>
+<div class="flex-1 flex flex-col justify-between py-0.5">
+<div>
+<div class="flex items-start justify-between gap-1">
+<div>
+<h4 class="font-headline-sm text-[16px] font-bold text-on-surface leading-tight">سلتة ملكية باللحم</h4>
+<p class="text-on-surface-variant text-[12px] mt-0.5">في حرضة صخرية فاخرة</p>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mt-1">
+              حلبة حارة تفور، مرق لحم غنم مطهو ببطء بالبهارات الصنعانية مع خبز التاوة الساخن.
+            </p>
+</div>
+<div class="flex items-center justify-between mt-2 pt-2 border-t border-surface-container">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md font-bold text-primary">4,500 ر.ي</span>
+<span class="text-on-surface-variant text-[11px] font-mono"></span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-[11px] text-on-surface-variant flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px]" data-icon="schedule">schedule</span> 20 دقيقة
+              </span>
+<button aria-label="أضف إلى السلة" class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center active:scale-90 transition-transform shadow-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 2: Smoked Zurbian Lamb -->
+<div class="bg-surface-container-lowest rounded-3xl p-3.5 clay-card-shadow border border-outline-variant/30 flex gap-3.5 transition-all hover:border-outline-variant">
+<div class="relative w-28 h-32 rounded-2xl overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Exquisite Yemeni Zurbian lamb presented on an ornate bronze tray with fragrant multi-colored saffron basmati rice, tender browned lamb shank, golden fried raisins, toasted pine nuts, and crispy shallots. Warm cinematic food photography, soft steam rising, royal banquet feel with warm amber highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuLMzoS3W2sgwoBQr-YvhAhyL9Q1xp4BgebWPY3r6cjf37iNZZg6Vp2dzViT6UgYCw0TuY05dSApKicIJWAyMTzXlBPJ6hYB7Qgn23gI9fyPemyofF0nzt65sI1m9FmA6EpQDIAuf0G8tD6xAL3HQYPoh57k57iHTr6FhU5o7g6Pji0M_G8tmNsMIeNY3sTiEogETS0fkD1CTGFkN68__hJ2KDTJ22KMyojgg_ICOwb4adz6KW-SY"/>
+<span class="absolute top-1.5 right-1.5 bg-secondary text-on-secondary text-[10px] font-bold px-2 py-0.5 rounded-full">
+            قطع فاخرة
+          </span>
+</div>
+<div class="flex-1 flex flex-col justify-between py-0.5">
+<div>
+<div class="flex items-start justify-between gap-1">
+<div>
+<h4 class="font-headline-sm text-[16px] font-bold text-on-surface leading-tight">زربيان لحم عدني مدخن</h4>
+<p class="text-on-surface-variant text-[12px] mt-0.5">على الطريقة العدنية الأصيلة</p>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mt-1">
+              أرز بسمتي معتق بالزعفران مع موزة لحم طرية وبصل مكرمل وزبيب وصنوبر محمص.
+            </p>
+</div>
+<div class="flex items-center justify-between mt-2 pt-2 border-t border-surface-container">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md font-bold text-primary">6,800 ر.ي</span>
+<span class="text-on-surface-variant text-[11px] font-mono"></span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-[11px] text-on-surface-variant flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px]" data-icon="schedule">schedule</span> 25 دقيقة
+              </span>
+<button aria-label="أضف إلى السلة" class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center active:scale-90 transition-transform shadow-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 3: Heirloom Sana'ani Qishr & Cardamom -->
+<div class="bg-surface-container-lowest rounded-3xl p-3.5 clay-card-shadow border border-outline-variant/30 flex gap-3.5 transition-all hover:border-outline-variant">
+<div class="relative w-28 h-32 rounded-2xl overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Traditional Yemeni Qishr hot spiced coffee husk tea served in an intricate chased brass dallah coffee pot and poured into clear glass finjan cups. Cinnamon sticks, green cardamom pods, and Haraz mountain honeycomb garnish the table. Warm studio shot with earthy stone and golden morning lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7AHJPvmWvBw8xL-xah2T7bDGRsZF-2VLUv5vYxg4v00A4D1i189tSNRF3EDhzxA5WjkAFGJuTG7KWkhiAZhQ55lltHcAuyeVmJpy2sbprN5ru1fiJdujn4xbi47b1R3U1kxgpX_eG0vqif3dbDEuA70Yl9bKE3uRygZegEqTOaO-4bkMqhi36iP7SRJOX0WlNPS_yRLTO8aFQVjs28UIJXs16RFuttMaZ1xQHdWYpeONbxgclfVM"/>
+<span class="absolute top-1.5 right-1.5 bg-emerald-700 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">
+            مصدر واحد
+          </span>
+</div>
+<div class="flex-1 flex flex-col justify-between py-0.5">
+<div>
+<div class="flex items-start justify-between gap-1">
+<div>
+<h4 class="font-headline-sm text-[16px] font-bold text-on-surface leading-tight">قهوة قشر صنعانية فاخرة بالهيل</h4>
+<p class="text-on-surface-variant text-[12px] mt-0.5">محضرة في دلة نحاسية</p>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mt-1">
+              منقوع قشر البن اليمني مع الزنجبيل والقرفة وحبوب حراز وعسل السدر الجبلي.
+            </p>
+</div>
+<div class="flex items-center justify-between mt-2 pt-2 border-t border-surface-container">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md font-bold text-primary">1,800 ر.ي</span>
+<span class="text-on-surface-variant text-[11px] font-mono"></span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-[11px] text-on-surface-variant flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px]" data-icon="schedule">schedule</span> 10 دقائق
+              </span>
+<button aria-label="أضف إلى السلة" class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center active:scale-90 transition-transform shadow-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 4: Warm Masoub Royale -->
+<div class="bg-surface-container-lowest rounded-3xl p-3.5 clay-card-shadow border border-outline-variant/30 flex gap-3.5 transition-all hover:border-outline-variant">
+<div class="relative w-28 h-32 rounded-2xl overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Gourmet Yemeni Masoub dessert served in a handcrafted clay bowl. Pureed sweet ripe bananas layered with wholesome ground flatbread, clotted qishta cream, black cumin nigella seeds, and a golden drizzle of amber mountain Sidr honey. Rich comforting aesthetic, natural warm earth tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEFsjYva3a1yJbNus7SeVsy_-_E8qIuhsw1tZJd670SjM6gcFM5NWGsEkwwNVRK1qQysJRcTsNsxN7iMO8oQ6oiase2qmJUNpq3Lgpmq4ZZygW8CiWQhp3s-WCU-MA0sndv6l6hb7cz2qxgcDwASzwgxibRUi4RQmUehi1eJvdVKZXf7yn9lmXvcIisOq5XjaqwVc-_XifVWQorSqR72RudPWgWuMITux-vWxn_DDEss8IizyLUCU"/>
+<span class="absolute top-1.5 right-1.5 bg-amber-700 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">
+            نباتي
+          </span>
+</div>
+<div class="flex-1 flex flex-col justify-between py-0.5">
+<div>
+<div class="flex items-start justify-between gap-1">
+<div>
+<h4 class="font-headline-sm text-[16px] font-bold text-on-surface leading-tight">معصوب ملكي بالقشطة والسدر</h4>
+<p class="text-on-surface-variant text-[12px] mt-0.5">حلى يمني تراثي دافئ</p>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mt-1">
+              موز ناضج مهروس مع خبز البر، عسل السدر الصافي وقشطة طازجة مع حبة البركة.
+            </p>
+</div>
+<div class="flex items-center justify-between mt-2 pt-2 border-t border-surface-container">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md font-bold text-primary">2,800 ر.ي</span>
+<span class="text-on-surface-variant text-[11px] font-mono"></span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-[11px] text-on-surface-variant flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px]" data-icon="schedule">schedule</span> 15 دقيقة
+              </span>
+<button aria-label="أضف إلى السلة" class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center active:scale-90 transition-transform shadow-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- VIP Rooftop & Private Diwan Reservation Promo Banner -->
+<section class="bg-gradient-to-br from-tertiary to-inverse-surface rounded-3xl p-4 text-surface-bright shadow-lg border border-tertiary-container/30 relative overflow-hidden">
+<!-- Decorative background accent -->
+<div class="absolute -left-8 -bottom-8 w-36 h-36 rounded-full bg-secondary-fixed-dim/10 blur-2xl pointer-events-none"></div>
+<div class="relative z-10">
+<div class="flex items-center gap-2 mb-1.5">
+<span class="material-symbols-outlined text-secondary-fixed text-[18px]" data-icon="stars" data-weight="fill" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span class="font-label-caps text-label-caps uppercase text-secondary-fixed tracking-wider">جلسات حصرية</span>
+</div>
+<h3 class="font-headline-md text-headline-md font-bold mb-1 leading-snug">ااطلب وجبتك المفضلة من أقرب فرع</h3>
+<p class="font-body-sm text-body-sm text-surface-variant mb-4">
+          استمتع بكرم الضيافة الصنعانية في أجنحة مجالس خاصة أو باحات علوية مفتوحة.
+        </p>
+<!-- Guest Selector Pills -->
+<div class="flex items-center justify-between bg-surface-bright/10 backdrop-blur-md rounded-2xl p-2.5 mb-3 border border-surface-bright/10">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-secondary-fixed" data-icon="group">group</span>
+<span class="font-label-md text-label-md text-surface-bright">عدد الضيوف</span>
+</div>
+<div class="flex items-center gap-1.5" dir="ltr">
+<button class="w-7 h-7 rounded-full bg-surface-bright/20 flex items-center justify-center text-xs font-semibold hover:bg-surface-bright/30 text-surface-bright">2</button>
+<button class="w-7 h-7 rounded-full bg-primary text-on-primary flex items-center justify-center text-xs font-semibold shadow-sm">4</button>
+<button class="w-7 h-7 rounded-full bg-surface-bright/20 flex items-center justify-center text-xs font-semibold hover:bg-surface-bright/30 text-surface-bright">6</button>
+<button class="w-7 h-7 rounded-full bg-surface-bright/20 flex items-center justify-center text-xs font-semibold hover:bg-surface-bright/30 text-surface-bright">+8</button>
+</div>
+</div>
+<button class="w-full bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md font-bold py-3 px-4 rounded-full flex items-center justify-center gap-2 shadow-md active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[18px]" data-icon="event_seat">event_seat</span>
+<span>تصفح القائمة واطلب للتوصيل</span>
+</button>
+</div>
+</section>
+</main>
+<!-- Floating Bottom Navigation Bar (RTL Order) -->
+<nav class="fixed bottom-0 left-0 right-0 z-50 flex items-center justify-around px-3 py-2.5 max-w-md mx-auto mb-4 rounded-full bg-surface/90 dark:bg-inverse-surface/90 border border-outline-variant/40 shadow-xl backdrop-blur-xl">
+<!-- Item 1: استكشف (Discover - ACTIVE) -->
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed font-semibold relative after:content-[''] after:w-1.5 after:h-1.5 after:bg-primary dark:after:bg-primary-fixed after:rounded-full after:mt-0.5 active:scale-90 duration-150 transition-transform" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="explore" data-weight="fill" style="font-variation-settings: 'FILL' 1;">explore</span>
+<span class="text-label-md font-label-md mt-0.5">استكشف</span>
+</a>
+<!-- Item 2: القائمة (Menu) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors active:scale-90 duration-150 transition-transform" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="restaurant_menu">restaurant_menu</span>
+<span class="text-label-md font-label-md mt-0.5">القائمة</span>
+</a>
+<!-- Item 3: الحجوزات (Reserve) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors active:scale-90 duration-150 transition-transform" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="table_restaurant">table_restaurant</span>
+<span class="text-label-md font-label-md mt-0.5">الحجوزات</span>
+</a>
+<!-- Item 4: السلة (Bag with badge) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors active:scale-90 duration-150 transition-transform relative" href="#">
+<div class="relative">
+<span class="material-symbols-outlined text-[22px]" data-icon="shopping_bag">shopping_bag</span>
+<span class="absolute -top-1 -left-2 bg-primary text-on-primary text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center shadow-sm">2</span>
+</div>
+<span class="text-label-md font-label-md mt-0.5">السلة</span>
+</a>
+<!-- Item 5: المكافآت (Rewards) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors active:scale-90 duration-150 transition-transform" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="person">person</span>
+<span class="text-label-md font-label-md mt-0.5">المكافآت</span>
+</a>
+</nav>
+
+
+</body></html>
